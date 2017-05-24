@@ -1,0 +1,17 @@
+{% extends "knowledge_pool/base.html" %}
+
+{% block content %}
+  <p>Assunto: {{ assunto }}</p>
+
+  <p>Entradas:</p>
+  <ul>
+    {% for entrada in entradas  %}
+      <li>
+        <p>{{ entrada.data_criacao|date:'M d, Y H:i' }}</p>
+        <p>{{ entrada.texto|linebreaks }}</p>
+      </li>
+    {% empty %}
+      <li>Não há nenhuma entrada para este assunto ainda.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

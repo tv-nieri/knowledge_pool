@@ -1,0 +1,19 @@
+{% extends "knowledge_pool/base.html" %}
+
+{% block content %}
+  <p>Lista de assuntos:</p>
+  <ul>
+    {% for assunto in lista_assuntos  %}
+      <!--<li>{{ assunto }}</li> -->
+      <li>
+        <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
+          {{ assunto }}
+        </a>
+      </li>
+    {% empty %}
+      <li>Nenhum assunto cadastrado até o momento.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'knowledge_pool:novo_assunto' %}">Novo assunto</a>
+
+{% endblock content %}
