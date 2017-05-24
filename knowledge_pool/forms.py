@@ -2,7 +2,7 @@
 
 from django import forms
 
-from .models import Assunto
+from .models import Assunto, Entrada
 
 class AssuntoForm(forms.ModelForm):
     """ Classe que define um form para o modelo Assunto """
@@ -11,3 +11,13 @@ class AssuntoForm(forms.ModelForm):
         model = Assunto
         fields = ['titulo']
         labels = {'titulo': ''}
+
+
+class EntradaForm(forms.ModelForm):
+    """ Classe que define um form baseado no modelo Entrada """
+    class Meta:
+        """ define os campos do form baseada nos atributos do modelo """
+        model = Entrada
+        fields = ['texto']
+        labels = {'texto': ''}
+        widgets = {'texto': forms.Textarea(attrs={'cols': 80})}

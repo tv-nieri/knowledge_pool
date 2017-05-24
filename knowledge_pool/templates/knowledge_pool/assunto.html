@@ -4,6 +4,7 @@
   <p>Assunto: {{ assunto }}</p>
 
   <p>Entradas:</p>
+  <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
   <ul>
     {% for entrada in entradas  %}
       <li>

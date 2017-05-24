@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 from .models import Assunto
-from .forms import AssuntoForm
+from .forms import AssuntoForm, EntradaForm
 
 def index(request):
     """ Retorna página Inicial """
@@ -34,3 +34,21 @@ def novo_assunto(request):
             return HttpResponseRedirect(reverse('knowledge_pool:assuntos'))
     context = {'form': form}
     return render(request, 'knowledge_pool/novo_assunto.html', context)
+
+def nova_entrada(request, assunto_id):
+    """ Cria uma nova entrada sobre um assunto em específico """
+    assunto = Assunto.objects.get(id=assunto_id)
+
+    if request.method != 'POST':
+        # Nenhum dado submetido, retorna form em branco.
+        form = EntradaForm()
+    else:
+        # Dados de post submetidos, processa o form.
+        form = EntradaForm(data=request.POST)
+        if form.is_valid():
+            nova_entrada = form.save(commit=False)
+            nova_entrada.assunto = assunto
+            nova_entrada.save()
+            return HttpResponseRedirect(reverse('knowledge_pool:assunto', args=[assunto_id]))
+    context = {'assunto': assunto, 'form': form}
+    return render(request, 'knowledge_pool/nova_entrada.html', context)

@@ -16,4 +16,7 @@ urlpatterns = [
 
     #Página para um novo assunto
     url(r'^novo_assunto/$', views.novo_assunto, name='novo_assunto'),
+
+    # Página para uma nova entrada sobre um assunto específico
+    url(r'^nova_entrada/(?P<assunto_id>\d+)/$', views.nova_entrada, name='nova_entrada'),
 ]
