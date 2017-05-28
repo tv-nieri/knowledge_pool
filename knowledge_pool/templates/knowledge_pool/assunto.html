@@ -10,7 +10,11 @@
       <li>
         <p>{{ entrada.data_criacao|date:'M d, Y H:i' }}</p>
         <p>{{ entrada.texto|linebreaks }}</p>
+        <p>
+          <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">editar entrada</a>
+        </p>
       </li>
+
     {% empty %}
       <li>Não há nenhuma entrada para este assunto ainda.</li>
     {% endfor %}

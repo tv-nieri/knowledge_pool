@@ -1,0 +1,15 @@
+{% extends "knowledge_pool/base.html" %}
+
+{% block content %}
+    <p>
+        <a href="{% url 'knowledge_pool:assunto' assunto.id %}">{{ assunto }}</a>
+    </p>
+
+    <p>Editar entrada:</p>
+    <form action="{% url 'knowledge_pool:editar_entrada' entrada.id %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="submit">Salvar anterações</button>
+    </form>
+
+{% endblock content %}
