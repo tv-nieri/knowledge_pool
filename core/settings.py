@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #Minhas apps
     'knowledge_pool',
+    'users',
 ]
 
 MIDDLEWARE = [

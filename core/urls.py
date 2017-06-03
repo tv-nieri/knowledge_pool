@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('knowledge_pool.urls', namespace='knowledge_pool')),
+    url(r'^users/', include('users.urls', namespace='users')),
 ]

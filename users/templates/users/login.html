@@ -1,0 +1,15 @@
+{% extends "knowledge_pool/base.html" %}
+
+{% block content %}
+    {% if form.errors %}
+        <p>O nome de usuário e senha não conferem. Por favor tente novamente.</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'users:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button name="submit">Entrar</button>
+        <input type="hidden" name="next" value="{% url 'knowledge_pool:index' %}">
+    </form>
+{% endblock content %}
