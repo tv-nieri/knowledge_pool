@@ -16,7 +16,7 @@ def index(request):
 @login_required
 def assuntos(request):
     """ Retorna uma página com todos os assuntos """
-    lista_assuntos = Assunto.objects.filter(dono=request.user).order_by('data_criacao')
+    lista_assuntos = Assunto.objects.order_by('data_criacao')
     contexto = {'lista_assuntos': lista_assuntos}
     return  render(request, 'knowledge_pool/assuntos.html', contexto)
 
@@ -25,11 +25,14 @@ def assuntos(request):
 def assunto(request, assunto_id):
     """ Retorna um assunto e todas as suas entradas """
     var_assunto = Assunto.objects.get(id=assunto_id)
+    user_logado = request.user.id
+    dono = var_assunto.dono.id
     # Garante que o user logado é dono do assunt
-    confere_dono(var_assunto, request.user)
+    # confere_dono(var_assunto, request.user)
 
     entradas = var_assunto.entrada_set.order_by('-data_criacao')
-    contexto = {'assunto': var_assunto, 'entradas': entradas}
+    contexto = {'assunto': var_assunto, 'entradas': entradas,
+                'user_logado': user_logado, 'dono': dono}
     return render(request, 'knowledge_pool/assunto.html', contexto)
 
 

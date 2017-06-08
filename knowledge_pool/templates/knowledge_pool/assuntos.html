@@ -4,7 +4,6 @@
   <p>Lista de assuntos:</p>
   <ul>
     {% for assunto in lista_assuntos  %}
-      <!--<li>{{ assunto }}</li> -->
       <li>
         <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
           {{ assunto }}
