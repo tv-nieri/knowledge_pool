@@ -53,6 +53,7 @@ def novo_assunto(request):
 def nova_entrada(request, assunto_id):
     """ Cria uma nova entrada sobre um assunto em específico """
     assunto = Assunto.objects.get(id=assunto_id)
+    confere_dono(assunto, request.user)
 
     if request.method != 'POST':
         # Nenhum dado submetido, retorna form em branco.
