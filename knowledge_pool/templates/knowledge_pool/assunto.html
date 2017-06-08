@@ -4,7 +4,9 @@
   <p>Assunto: {{ assunto }}</p>
 
   <p>Entradas:</p>
-  <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
+  {% if dono == user_logado %}
+    <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
+  {% endif %}
   <ul>
     {% for entrada in entradas  %}
       <li>
