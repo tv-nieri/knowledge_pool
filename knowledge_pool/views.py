@@ -1,6 +1,6 @@
 """ Arquivo de views(controller) do app knowledge_pool """
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -16,7 +16,7 @@ def index(request):
 @login_required
 def assuntos(request):
     """ Retorna uma página com todos os assuntos """
-    lista_assuntos = Assunto.objects.order_by('data_criacao')
+    lista_assuntos = Assunto.objects.filter(dono=request.user).order_by('data_criacao')
     contexto = {'lista_assuntos': lista_assuntos}
     return  render(request, 'knowledge_pool/assuntos.html', contexto)
 
@@ -25,6 +25,9 @@ def assuntos(request):
 def assunto(request, assunto_id):
     """ Retorna um assunto e todas as suas entradas """
     var_assunto = Assunto.objects.get(id=assunto_id)
+    # Garante que o user logado é dono do assunt
+    confere_dono(var_assunto, request.user)
+
     entradas = var_assunto.entrada_set.order_by('-data_criacao')
     contexto = {'assunto': var_assunto, 'entradas': entradas}
     return render(request, 'knowledge_pool/assunto.html', contexto)
@@ -38,7 +41,9 @@ def novo_assunto(request):
     else:
         form = AssuntoForm(request.POST)
         if form.is_valid():
-            form.save()
+            novo_assunto = form.save(commit=False)
+            novo_assunto.dono = request.user
+            novo_assunto.save()
             return HttpResponseRedirect(reverse('knowledge_pool:assuntos'))
     context = {'form': form}
     return render(request, 'knowledge_pool/novo_assunto.html', context)
@@ -69,6 +74,7 @@ def editar_entrada(request, entrada_id):
     """ Edita uma entrada existente """
     entrada = Entrada.objects.get(id=entrada_id)
     assunto = entrada.assunto
+    confere_dono(assunto, request.user)
 
     if request.method != 'POST':
         #Requição inicial, entrega um form com os dados da entrada preenchidos.
@@ -81,3 +87,8 @@ def editar_entrada(request, entrada_id):
             return HttpResponseRedirect(reverse('knowledge_pool:assunto', args=[assunto.id]))
     context = {'entrada': entrada, 'assunto': assunto, 'form': form}
     return render(request, 'knowledge_pool/editar_entrada.html', context)
+
+def confere_dono(assunto, user_logado):
+    """ Confere se o assunto pertence ao atual user """
+    if assunto.dono != user_logado:
+        raise  Http404
