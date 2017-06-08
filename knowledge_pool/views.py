@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
@@ -12,6 +13,7 @@ def index(request):
     return render(request, 'knowledge_pool/index.html')
 
 
+@login_required
 def assuntos(request):
     """ Retorna uma página com todos os assuntos """
     lista_assuntos = Assunto.objects.order_by('data_criacao')
@@ -19,6 +21,7 @@ def assuntos(request):
     return  render(request, 'knowledge_pool/assuntos.html', contexto)
 
 
+@login_required
 def assunto(request, assunto_id):
     """ Retorna um assunto e todas as suas entradas """
     var_assunto = Assunto.objects.get(id=assunto_id)
@@ -27,6 +30,7 @@ def assunto(request, assunto_id):
     return render(request, 'knowledge_pool/assunto.html', contexto)
 
 
+@login_required
 def novo_assunto(request):
     """ Cria um novo assunto """
     if request.method != 'POST':
@@ -40,6 +44,7 @@ def novo_assunto(request):
     return render(request, 'knowledge_pool/novo_assunto.html', context)
 
 
+@login_required
 def nova_entrada(request, assunto_id):
     """ Cria uma nova entrada sobre um assunto em específico """
     assunto = Assunto.objects.get(id=assunto_id)
@@ -59,6 +64,7 @@ def nova_entrada(request, assunto_id):
     return render(request, 'knowledge_pool/nova_entrada.html', context)
 
 
+@login_required
 def editar_entrada(request, entrada_id):
     """ Edita uma entrada existente """
     entrada = Entrada.objects.get(id=entrada_id)
