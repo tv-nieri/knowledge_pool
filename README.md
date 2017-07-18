@@ -6,4 +6,4 @@
 * Python 3
 * Django 1.10
 * Microsoft Visual Studio Code
-* Linux Fedora 25 
+* Linux Ubuntu 16.04 LTS 
