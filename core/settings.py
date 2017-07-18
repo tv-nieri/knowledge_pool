@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     #Minhas apps
     'knowledge_pool',
     'users',
+
+    # Apps de terceiros
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -125,3 +128,8 @@ STATIC_URL = '/static/'
 
 # Minhas configs
 LOGIN_URL = '/users/login/'
+
+# Config do bootstrap3
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
