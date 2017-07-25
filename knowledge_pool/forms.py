@@ -4,6 +4,7 @@ from django import forms
 
 from .models import Assunto, Entrada
 
+
 class AssuntoForm(forms.ModelForm):
     """ Classe que define um form para o modelo Assunto """
     class Meta:

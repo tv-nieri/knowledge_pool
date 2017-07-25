@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Assunto(models.Model):
     """ Classe que represneta uma assunto """
     titulo = models.CharField(max_length=200)
@@ -11,6 +12,7 @@ class Assunto(models.Model):
     def __str__(self):
         """ Devolve o titulo do assunto """
         return self.titulo
+
 
 class Entrada(models.Model):
     """ Classe que define uma entrada sobre um assunto """

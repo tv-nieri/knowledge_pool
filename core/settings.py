@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #Minhas apps
+    # Minhas apps
     'knowledge_pool',
     'users',
 

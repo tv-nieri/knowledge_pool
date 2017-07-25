@@ -1,15 +1,19 @@
 {% extends "knowledge_pool/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>Faça login em sua conta.</h2>
+{% endblock header %}
 
 {% block content %}
-    {% if form.errors %}
-        <p>O nome de usuário e senha não conferem. Por favor tente novamente.</p>
-    {% endif %}
-
-    <form method="POST" action="{% url 'users:login' %}">
+    <form method="POST" action="{% url 'users:login' %}" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">log in</button>
+        {% endbuttons %}
         
-        <button name="submit">Entrar</button>
         <input type="hidden" name="next" value="{% url 'knowledge_pool:index' %}">
     </form>
 {% endblock content %}

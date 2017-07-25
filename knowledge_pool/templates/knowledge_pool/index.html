@@ -1,7 +1,23 @@
 {% extends "knowledge_pool/base.html" %}
 
+{% block header %}
+    <div class="jumbotron">
+        <h1>Knowledge Pool - Compartilhe o conhecimento.</h1>
+    </div>
+{% endblock header %}
+
 {% block content %}
-  <p>
-    Bem vindo ao Knowledge_pool, o lugar ideal para você compartilhar conhecimento com todo o seu time!
-  </p>
+  <h2>
+      <a href="{% url 'users:register' %}">Crie uma conta</a> para consultar
+       assuntos e criar sua próprias anotações.
+  </h2>
+  <h2>
+      Aqui você pode pesquisar sobre um assunto específico sobre o qual está
+      aprendendo ou encontrar uma solução para um problema que encontrou. Mas é
+      claro, é importante compartilhar o que você sabe também, então não deixe
+      de criar suas próprias anotações!
+      <br/>
+      <br/>
+      <i>"Se quer ir rápido vá sozinho. Se quer ir longe, vamos juntos..."</i>
+  </h2>
 {% endblock content %}
