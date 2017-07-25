@@ -1,26 +1,31 @@
 {% extends "knowledge_pool/base.html" %}
 
+{% block header %}
+    <h2>{{ assunto }}</h2>
+{% endblock header %}
+
 {% block content %}
-  <p>Assunto: {{ assunto }}</p>
+    <p>
+        <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
+    </p>
 
-  <p>Entradas:</p>
-  {% if dono == user_logado %}
-    <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
-  {% endif %}
-  <ul>
     {% for entrada in entradas  %}
-      <li>
-        <p>{{ entrada.data_criacao|date:'M d, Y H:i' }}</p>
-        <p>{{ entrada.texto|linebreaks }}</p>
-        {% if dono == user_logado %}
-          <p>
-            <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">editar entrada</a>
-          </p>
-        {% endif %}
-      </li>
-
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>
+                    {{ entrada.data_criacao|date:'M d, Y H:i' }}
+                    {% if dono == user_logado %}
+                        <small>
+                            <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar</a>
+                        </small>
+                    {% endif %}
+                </h3>
+            </div>
+            <div class="panel-body">
+                {{ entrada.texto|linebreaks }}
+            </div>
+        </div><!-- panel -->
     {% empty %}
-      <li>Não há nenhuma entrada para este assunto ainda.</li>
+        Não há entradas para este tópico ainda.
     {% endfor %}
-  </ul>
 {% endblock content %}
