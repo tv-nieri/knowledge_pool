@@ -14,11 +14,9 @@
             <div class="panel-heading">
                 <h3>
                     {{ entrada.data_criacao|date:'M d, Y H:i' }}
-                    {% if dono == user_logado %}
-                        <small>
-                            <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar</a>
-                        </small>
-                    {% endif %}
+                    <small>
+                        <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar</a>
+                    </small>
                 </h3>
             </div>
             <div class="panel-body">

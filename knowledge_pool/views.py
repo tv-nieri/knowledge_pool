@@ -1,6 +1,6 @@
 """ Arquivo de views(controller) do app knowledge_pool """
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -27,8 +27,6 @@ def assunto(request, assunto_id):
     var_assunto = Assunto.objects.get(id=assunto_id)
     user_logado = request.user.id
     dono = var_assunto.dono.id
-    # Garante que o user logado é dono do assunt
-    # confere_dono(var_assunto, request.user)
 
     entradas = var_assunto.entrada_set.order_by('-data_criacao')
     contexto = {'assunto': var_assunto, 'entradas': entradas,
@@ -56,7 +54,6 @@ def novo_assunto(request):
 def nova_entrada(request, assunto_id):
     """ Cria uma nova entrada sobre um assunto em específico """
     assunto = Assunto.objects.get(id=assunto_id)
-    confere_dono(assunto, request.user)
 
     if request.method != 'POST':
         # Nenhum dado submetido, retorna form em branco.
@@ -79,7 +76,6 @@ def editar_entrada(request, entrada_id):
     """ Edita uma entrada existente """
     entrada = Entrada.objects.get(id=entrada_id)
     assunto = entrada.assunto
-    confere_dono(assunto, request.user)
 
     if request.method != 'POST':
         # Requição inicial, entrega um form com os dados da entrada preenchidos
@@ -93,9 +89,3 @@ def editar_entrada(request, entrada_id):
                 reverse('knowledge_pool:assunto', args=[assunto.id]))
     context = {'entrada': entrada, 'assunto': assunto, 'form': form}
     return render(request, 'knowledge_pool/editar_entrada.html', context)
-
-
-def confere_dono(assunto, user_logado):
-    """ Confere se o assunto pertence ao atual user """
-    if assunto.dono != user_logado:
-        raise Http404
