@@ -1,15 +1,27 @@
 {% extends "knowledge_pool/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>
+        Editar entrada para 
+        <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
+            {{ assunto }}
+        </a>:
+    </h2>
+{% endblock header %}
 
 {% block content %}
-    <p>
-        <a href="{% url 'knowledge_pool:assunto' assunto.id %}">{{ assunto }}</a>
-    </p>
 
-    <p>Editar entrada:</p>
-    <form action="{% url 'knowledge_pool:editar_entrada' entrada.id %}" method="POST">
+    <form action="{% url 'knowledge_pool:editar_entrada' entrada.id %}" 
+        method="POST" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" name="submit">Salvar anterações</button>
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button type="submit" name="submit" class="btn btn-primary">
+                Salvar anterações
+            </button>
+        {% endbuttons %}
     </form>
 
 {% endblock content %}

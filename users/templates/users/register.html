@@ -1,11 +1,18 @@
 {% extends "knowledge_pool/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>Registre-se</h2>
+{% endblock header %}
 
 {% block content %}
-    <form method="POST" action="{% url 'users:register' %}">
+    <form method="POST" action="{% url 'users:register' %}" class="form">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootstrap_form form %}
 
-        <button name="submit">Registrar</button>
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">Registrar</button>
+        {% endbuttons %}
         <input type="hidden" name="next" value="{% url 'knowledge_pool:index' %}">
     </form>
 {% endblock content %}
