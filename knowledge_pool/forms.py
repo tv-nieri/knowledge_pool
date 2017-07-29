@@ -10,9 +10,8 @@ class AssuntoForm(forms.ModelForm):
     class Meta:
         """ Classe de dados do Modelo assunto (transforma em campos) """
         model = Assunto
-        fields = ['titulo', 'descricao', 'ticket_associado']
-        labels = {'titulo': 'Título', 'descricao': 'Descrição',
-                            'ticket_associado': 'Ticket'}
+        fields = ['titulo', 'descricao']
+        labels = {'titulo': 'Título', 'descricao': 'Descrição'}
 
 
 class EntradaForm(forms.ModelForm):
@@ -20,6 +19,6 @@ class EntradaForm(forms.ModelForm):
     class Meta:
         """ define os campos do form baseada nos atributos do modelo """
         model = Entrada
-        fields = ['texto']
-        labels = {'texto': ''}
+        fields = ['ticket_associado', 'texto']
+        labels = {'texto': 'Texto', 'ticket_associado': 'Ticket'}
         widgets = {'texto': forms.Textarea(attrs={'cols': 80})}

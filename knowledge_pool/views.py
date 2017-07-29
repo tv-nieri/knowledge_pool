@@ -18,7 +18,6 @@ def index(request):
         return render(request, 'knowledge_pool/index.html', context)
     except ObjectDoesNotExist:
         return render(request, 'knowledge_pool/index.html')
-    
 
 
 @login_required

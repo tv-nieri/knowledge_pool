@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 class Assunto(models.Model):
     """ Classe que represneta uma assunto """
     titulo = models.CharField(max_length=200)
-    ticket_associado = models.CharField(max_length=100)
     descricao = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     dono = models.ForeignKey(User)
@@ -19,6 +18,7 @@ class Assunto(models.Model):
 class Entrada(models.Model):
     """ Classe que define uma entrada sobre um assunto """
     assunto = models.ForeignKey(Assunto)
+    ticket_associado = models.CharField(max_length=50, blank=True)
     texto = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
 
