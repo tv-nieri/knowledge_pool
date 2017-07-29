@@ -10,8 +10,9 @@ class AssuntoForm(forms.ModelForm):
     class Meta:
         """ Classe de dados do Modelo assunto (transforma em campos) """
         model = Assunto
-        fields = ['titulo']
-        labels = {'titulo': ''}
+        fields = ['titulo', 'descricao', 'ticket_associado']
+        labels = {'titulo': 'Título', 'descricao': 'Descrição',
+                            'ticket_associado': 'Ticket'}
 
 
 class EntradaForm(forms.ModelForm):

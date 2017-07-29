@@ -2,11 +2,10 @@
 {% load bootstrap3 %}
 
 {% block header %}
-    <h2>Adicionar um novo tópico:</h2>
+    <h2>Adicionar um novo assunto:</h2>
 {% endblock header %}
 
 {% block content %}
-  <p>Adicionar um novo assunto</p>
 
   <form action="{% url 'knowledge_pool:novo_assunto' %}" method="POST" class="form">
     {% csrf_token %}

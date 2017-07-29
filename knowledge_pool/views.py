@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
@@ -10,7 +12,13 @@ from .forms import AssuntoForm, EntradaForm
 
 def index(request):
     """ Retorna página Inicial """
-    return render(request, 'knowledge_pool/index.html')
+    try:
+        user = User.objects.get(id=request.user.id)
+        context = {'user': user}
+        return render(request, 'knowledge_pool/index.html', context)
+    except ObjectDoesNotExist:
+        return render(request, 'knowledge_pool/index.html')
+    
 
 
 @login_required

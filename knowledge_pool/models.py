@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 class Assunto(models.Model):
     """ Classe que represneta uma assunto """
     titulo = models.CharField(max_length=200)
+    ticket_associado = models.CharField(max_length=100)
+    descricao = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     dono = models.ForeignKey(User)
 
