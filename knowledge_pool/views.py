@@ -32,12 +32,11 @@ def assuntos(request):
 def assunto(request, assunto_id):
     """ Retorna um assunto e todas as suas entradas """
     var_assunto = Assunto.objects.get(id=assunto_id)
-    user_logado = request.user.id
-    dono = var_assunto.dono.id
+    user_logado = User.objects.get(id=request.user.id)
 
     entradas = var_assunto.entrada_set.order_by('-data_criacao')
     contexto = {'assunto': var_assunto, 'entradas': entradas,
-                'user_logado': user_logado, 'dono': dono}
+                'user_logado': user_logado}
     return render(request, 'knowledge_pool/assunto.html', contexto)
 
 
@@ -61,6 +60,7 @@ def novo_assunto(request):
 def nova_entrada(request, assunto_id):
     """ Cria uma nova entrada sobre um assunto em específico """
     assunto = Assunto.objects.get(id=assunto_id)
+    user_logado = User.objects.get(id=request.user.id)
 
     if request.method != 'POST':
         # Nenhum dado submetido, retorna form em branco.
@@ -71,6 +71,7 @@ def nova_entrada(request, assunto_id):
         if form.is_valid():
             nova_entrada = form.save(commit=False)
             nova_entrada.assunto = assunto
+            nova_entrada.dono = user_logado
             nova_entrada.save()
             return HttpResponseRedirect(
                 reverse('knowledge_pool:assunto', args=[assunto_id]))

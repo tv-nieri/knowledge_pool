@@ -2,6 +2,7 @@
 
 {% block header %}
     <h2>{{ assunto }}</h2>
+    <p>{{ assunto.descricao }}</p>
 {% endblock header %}
 
 {% block content %}
@@ -14,9 +15,11 @@
             <div class="panel-heading">
                 <h3>
                     {{ entrada.data_criacao|date:'M d, Y H:i' }}
-                    <small>
-                        <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar</a>
-                    </small>
+                    {% if user_logado == entrada.dono %}
+                        <small>
+                            <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar</a>
+                        </small>
+                    {% endif %}
                 </h3>
             </div>
             <div class="panel-body">

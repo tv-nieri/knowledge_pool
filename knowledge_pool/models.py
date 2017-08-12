@@ -21,6 +21,7 @@ class Entrada(models.Model):
     ticket_associado = models.CharField(max_length=50, blank=True)
     texto = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
+    dono = models.ForeignKey(User)
 
     def __str__(self):
         """ Retorna uma representação do assunto. """
