@@ -17,6 +17,18 @@ urlpatterns = [
     # Página para um novo assunto
     url(r'^novo_assunto/$', views.novo_assunto, name='novo_assunto'),
 
+    # Deletar um assunto
+    url(r'^remover_assunto/(?P<assunto_id>\d+)/$',
+        views.remover_assunto, name='remover_assunto'),
+
+    # Confirma remocao assunto
+    url(r'^confirma_remocao_assunto/(?P<assunto_id>\d+)/$',
+        views.confirma_remocao_assunto, name='confirma_remocao_assunto'),
+
+    # Editar um assunto
+    url(r'^editar_assunto/(?P<assunto_id>\d+)/$',
+        views.editar_assunto, name='editar_assunto'),
+
     # Página para uma nova entrada sobre um assunto específico
     url(r'^nova_entrada/(?P<assunto_id>\d+)/$',
         views.nova_entrada, name='nova_entrada'),
@@ -24,4 +36,5 @@ urlpatterns = [
     # Páginas para editar entradas sobre um assunto
     url(r'^editar_entrada/(?P<entrada_id>\d+)/$',
         views.editar_entrada, name='editar_entrada'),
+
 ]

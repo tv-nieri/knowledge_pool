@@ -57,6 +57,20 @@ def novo_assunto(request):
 
 
 @login_required
+def remover_assunto(request, assunto_id):
+    """ Remove um assunto """
+    assunto = Assunto.objects.get(id=assunto_id)
+    assunto.delete()
+    return HttpResponseRedirect(reverse('knowledge_pool:assuntos'))
+
+@login_required
+def confirma_remocao_assunto(request, assunto_id):
+    """ Confirma a remocao de um assunto """
+    assunto = Assunto.objects.get(id=assunto_id)
+    context = {'assunto': assunto}
+    return render(request, 'knowledge_pool/confirma_remocao_assunto.html', context)
+
+@login_required
 def nova_entrada(request, assunto_id):
     """ Cria uma nova entrada sobre um assunto em específico """
     assunto = Assunto.objects.get(id=assunto_id)
@@ -97,3 +111,21 @@ def editar_entrada(request, entrada_id):
                 reverse('knowledge_pool:assunto', args=[assunto.id]))
     context = {'entrada': entrada, 'assunto': assunto, 'form': form}
     return render(request, 'knowledge_pool/editar_entrada.html', context)
+
+@login_required
+def editar_assunto(request, assunto_id):
+    """ Editar um assunto """
+    assunto = Assunto.objects.get(id=assunto_id)
+
+    if request.method != 'POST':
+        # Entrega um form com os dados atuais
+        form = AssuntoForm(instance=assunto)
+    else:
+        # Dados submetidos, processa e salva alteração
+        form = AssuntoForm(instance=assunto, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('knowledge_pool:assunto', args=[assunto.id]))
+
+    context = {'assunto': assunto, 'form': form}
+    return render(request, 'knowledge_pool/editar_assunto.html', context)

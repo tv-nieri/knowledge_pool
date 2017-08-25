@@ -1,0 +1,33 @@
+{% extends "knowledge_pool/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2>Deseja mesmo remover {{ assunto }} e todas as suas entradas?</h2>
+{% endblock header %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Detalhes do assunto</h3>
+        </div>
+        <div class="panel-body">
+            <h4>
+                <p>Adicionado por: {{ assunto.dono.username }}</p>
+                <p>Data de criação: {{ assunto.data_criacao }}</p>
+                Descrição: <p>{{assunto.descricao}}</p>
+            </h4>
+        </div>
+    </div><!-- panel -->
+    <form action="#">
+        {% buttons %}
+            <button type="submit" name="remove" class="btn btn-danger" 
+                formaction="{% url 'knowledge_pool:remover_assunto' assunto.id %}">
+                Remover
+            </button>
+            <button type="submit" name="back" class="btn btn-info" 
+                formaction="{% url 'knowledge_pool:editar_assunto' assunto.id %}">
+                Voltar
+             </button>
+        {% endbuttons %}
+    </form>
+{% endblock content %}  

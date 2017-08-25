@@ -10,8 +10,6 @@
 
 {% block content %}
 
-    <p>Nova entrada</p>
-
     <form action="{% url 'knowledge_pool:nova_entrada' assunto.id %}" 
         method="POST" class="form">
         {% csrf_token %}
