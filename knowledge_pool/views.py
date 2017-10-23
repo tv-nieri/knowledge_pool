@@ -52,8 +52,35 @@ def novo_assunto(request):
             novo_assunto.dono = request.user
             novo_assunto.save()
             return HttpResponseRedirect(reverse('knowledge_pool:assuntos'))
-    context = {'form': form}
-    return render(request, 'knowledge_pool/novo_assunto.html', context)
+    contexto = {'form': form}
+    return render(request, 'knowledge_pool/novo_assunto.html', contexto)
+
+
+@login_required
+def editar_assunto(request, assunto_id):
+    """ Editar um assunto """
+    assunto = Assunto.objects.get(id=assunto_id)
+
+    if request.method != 'POST':
+        # Entrega um form com os dados atuais
+        form = AssuntoForm(instance=assunto)
+    else:
+        # Dados submetidos, processa e salva alteração
+        form = AssuntoForm(instance=assunto, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('knowledge_pool:assunto', args=[assunto.id]))
+
+    contexto = {'assunto': assunto, 'form': form}
+    return render(request, 'knowledge_pool/editar_assunto.html', contexto)
+
+
+@login_required
+def confirma_remocao_assunto(request, assunto_id):
+    """ Confirma a remocao de um assunto """
+    assunto = Assunto.objects.get(id=assunto_id)
+    contexto = {'assunto': assunto}
+    return render(request, 'knowledge_pool/confirma_remocao_assunto.html', contexto)
 
 
 @login_required
@@ -63,12 +90,6 @@ def remover_assunto(request, assunto_id):
     assunto.delete()
     return HttpResponseRedirect(reverse('knowledge_pool:assuntos'))
 
-@login_required
-def confirma_remocao_assunto(request, assunto_id):
-    """ Confirma a remocao de um assunto """
-    assunto = Assunto.objects.get(id=assunto_id)
-    context = {'assunto': assunto}
-    return render(request, 'knowledge_pool/confirma_remocao_assunto.html', context)
 
 @login_required
 def nova_entrada(request, assunto_id):
@@ -89,8 +110,8 @@ def nova_entrada(request, assunto_id):
             nova_entrada.save()
             return HttpResponseRedirect(
                 reverse('knowledge_pool:assunto', args=[assunto_id]))
-    context = {'assunto': assunto, 'form': form}
-    return render(request, 'knowledge_pool/nova_entrada.html', context)
+    contexto = {'assunto': assunto, 'form': form}
+    return render(request, 'knowledge_pool/nova_entrada.html', contexto)
 
 
 @login_required
@@ -109,23 +130,23 @@ def editar_entrada(request, entrada_id):
             form.save()
             return HttpResponseRedirect(
                 reverse('knowledge_pool:assunto', args=[assunto.id]))
-    context = {'entrada': entrada, 'assunto': assunto, 'form': form}
-    return render(request, 'knowledge_pool/editar_entrada.html', context)
+    contexto = {'entrada': entrada, 'assunto': assunto, 'form': form}
+    return render(request, 'knowledge_pool/editar_entrada.html', contexto)
+
 
 @login_required
-def editar_assunto(request, assunto_id):
-    """ Editar um assunto """
-    assunto = Assunto.objects.get(id=assunto_id)
+def confirma_remocao_entrada(request, entrada_id):
+    """ Confirma a remocao de uma entrada """
+    entrada = Entrada.objects.get(id=entrada_id)
+    contexto = {'entrada': entrada}
+    return render(request, 'knowledge_pool/confirma_remocao_entrada.html', contexto)
 
-    if request.method != 'POST':
-        # Entrega um form com os dados atuais
-        form = AssuntoForm(instance=assunto)
-    else:
-        # Dados submetidos, processa e salva alteração
-        form = AssuntoForm(instance=assunto, data=request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('knowledge_pool:assunto', args=[assunto.id]))
 
-    context = {'assunto': assunto, 'form': form}
-    return render(request, 'knowledge_pool/editar_assunto.html', context)
+@login_required
+def remover_entrada(request, entrada_id):
+    """ Remove uma entrada """
+    entrada = Entrada.objects.get(id=entrada_id)
+    assunto = Assunto.objects.get(id=entrada.assunto.id)
+    contexto = {"assunto": assunto}
+    entrada.delete()
+    return render(request, 'knowledge_pool/assunto.html', contexto)

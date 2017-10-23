@@ -19,7 +19,11 @@
 
         {% buttons %}
             <button type="submit" name="submit" class="btn btn-primary">
-                Salvar anterações
+                Salvar alterações
+            </button>
+            <button type="submit" name="remove" class="btn btn-danger"
+                formaction="{% url 'knowledge_pool:confirma_remocao_entrada' entrada.id %}">
+                Remover
             </button>
         {% endbuttons %}
     </form>

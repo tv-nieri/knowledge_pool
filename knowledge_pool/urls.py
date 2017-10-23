@@ -37,4 +37,11 @@ urlpatterns = [
     url(r'^editar_entrada/(?P<entrada_id>\d+)/$',
         views.editar_entrada, name='editar_entrada'),
 
+    # Confirma remocao entrada
+    url(r'^confirma_remocao_entrada/(?P<entrada_id>\d+)/$',
+        views.confirma_remocao_entrada, name='confirma_remocao_entrada'),
+
+    # Deletar uma entrada
+    url(r'^remover_entrada/(?P<entrada_id>\d+)/$',
+        views.remover_entrada, name='remover_entrada'),
 ]

@@ -3,7 +3,7 @@
 {% block header %}
     <h2>{{ assunto }}</h2>
     <p>{{ assunto.descricao }}</p>
-    <a href="{% url 'knowledge_pool:editar_assunto' assunto.id %}">Editar assunto</a>
+    <a href="{% url 'knowledge_pool:editar_assunto' assunto.id %}">Editar/Remover</a>
 {% endblock header %}
 
 {% block content %}
