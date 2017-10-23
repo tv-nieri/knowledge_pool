@@ -20,5 +20,5 @@ class EntradaForm(forms.ModelForm):
         """ define os campos do form baseada nos atributos do modelo """
         model = Entrada
         fields = ['ticket_associado', 'texto']
-        labels = {'texto': 'Texto', 'ticket_associado': 'Ticket'}
+        labels = {'texto': 'Texto', 'ticket_associado': 'Ticket/Erro'}
         widgets = {'texto': forms.Textarea(attrs={'cols': 80})}
