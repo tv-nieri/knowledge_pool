@@ -1,0 +1,22 @@
+.main-title {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: #447e9b;
+}
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+}
+
+.navbar-brand {
+    float:none;
+}
+
+.jumbotron h1{
+    color: #447e9b;
+}
+
+.jumbotron center{
+    color: #447e9b;
+}
