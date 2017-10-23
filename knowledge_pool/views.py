@@ -146,7 +146,6 @@ def confirma_remocao_entrada(request, entrada_id):
 def remover_entrada(request, entrada_id):
     """ Remove uma entrada """
     entrada = Entrada.objects.get(id=entrada_id)
-    assunto = Assunto.objects.get(id=entrada.assunto.id)
-    contexto = {"assunto": assunto}
     entrada.delete()
-    return render(request, 'knowledge_pool/assunto.html', contexto)
+    return HttpResponseRedirect(
+        reverse('knowledge_pool:assunto', args=[entrada.assunto.id]))
