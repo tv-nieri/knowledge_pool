@@ -11,6 +11,13 @@
 
 .navbar-brand {
     float:none;
+    font-size: 40px;
+    margin: 8px 0;
+}
+
+.navbar-brand a{
+    font-size: 40px;
+    margin: 8px 0;
 }
 
 .jumbotron h1{
@@ -19,4 +26,11 @@
 
 .jumbotron center{
     color: #447e9b;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
 }
