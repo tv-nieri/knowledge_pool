@@ -4,8 +4,7 @@
     <list default="true" id="c011bc71-aa55-46a3-aabb-be4e497be3d0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" afterPath="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="assuntos.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="36">
+              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -49,8 +48,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            <state relative-caret-position="165">
+              <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -59,8 +58,8 @@
       <file leaf-file-name="knowledge_pool.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="233">
+              <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -69,7 +68,7 @@
       <file leaf-file-name="assunto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="3">
               <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="39" />
               <folding />
             </state>
@@ -100,8 +99,8 @@
         <option value="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/style.css" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/index.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" />
-        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" />
+        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
       </list>
     </option>
@@ -760,34 +759,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html">
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="36">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html">
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="3">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="233">
+          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        <state relative-caret-position="165">
+          <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
           <folding />
         </state>
       </provider>
