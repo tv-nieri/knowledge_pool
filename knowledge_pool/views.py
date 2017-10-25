@@ -9,6 +9,7 @@ import json
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
+from .utils import *
 
 
 def index(request):
@@ -106,9 +107,12 @@ def nova_entrada(request, assunto_id):
         form = EntradaForm(data=request.POST)
         if form.is_valid():
             nova_entrada = form.save(commit=False)
+            assunto.qnt_entradas += 1
             nova_entrada.assunto = assunto
             nova_entrada.dono = user_logado
+            assunto.save()
             nova_entrada.save()
+
             return HttpResponseRedirect(
                 reverse('knowledge_pool:assunto', args=[assunto_id]))
     contexto = {'assunto': assunto, 'form': form}
@@ -155,14 +159,20 @@ def remover_entrada(request, entrada_id):
 @login_required
 def graficos(request):
     """ Apresenta os gráficos """
-    assuntos = Assunto.objects.all()
-    qtd_entradas = []
-    for assunto in assuntos:
-        if assunto.entrada_set.count() != 0:
-            qtd_entradas.append(assunto.entrada_set.count())
+    qtd_entradas = get_qnt_entrada()
+    titulos_assuntos = get_titulos_assuntos()
+    users = User.objects.all()
+    user_names = []
+    for user in users:
+        user_names.append(user.username)
+    entradas_por_user = []
+    for user in users:
+        entradas_por_user.append(user.entrada_set.count())
 
-
-    titulos_assuntos = [obj.titulo for obj in assuntos]
     contexto = {"titulos": json.dumps(titulos_assuntos),
-                "entradas": json.dumps(qtd_entradas)}
+                "entradas": json.dumps(qtd_entradas),
+                "users": json.dumps(user_names),
+                "entradas_por_user": json.dumps(entradas_por_user)}
     return render(request, 'knowledge_pool/graficos.html', contexto)
+
+

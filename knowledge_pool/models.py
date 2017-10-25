@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 
 
 class Assunto(models.Model):
-    """ Classe que represneta uma assunto """
+    """ Classe que representa uma assunto """
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     dono = models.ForeignKey(User)
+    qnt_entradas = models.IntegerField(default=0)
 
     def __str__(self):
         """ Devolve o titulo do assunto """

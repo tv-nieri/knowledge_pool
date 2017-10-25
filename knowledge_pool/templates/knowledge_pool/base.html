@@ -9,8 +9,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/knowledge_pool.css' %}">
+        <link rel="stylesheet" href="{% static 'css/../../static/knowledge_pool/knowledge_pool.css' %}">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+        <script src="{% static "knowledge_pool/chart_functions.js" %}"></script>
+
 
         {% if user.is_authenticated %}
             <title>Knowledge Pool | {{ user.username }}</title>

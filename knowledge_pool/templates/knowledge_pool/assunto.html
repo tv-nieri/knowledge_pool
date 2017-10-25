@@ -3,6 +3,7 @@
 {% block header %}
     <h2>{{ assunto }}</h2>
     <p>{{ assunto.descricao }}</p>
+    <p>Quantidade de entradas: {{ assunto.qnt_entradas }}</p>
     {% if user_logado == assunto.dono %}
         <a href="{% url 'knowledge_pool:editar_assunto' assunto.id %}">Editar/Remover</a>
     {% endif %}
