@@ -44,4 +44,7 @@ urlpatterns = [
     # Deletar uma entrada
     url(r'^remover_entrada/(?P<entrada_id>\d+)/$',
         views.remover_entrada, name='remover_entrada'),
+
+    # Apresenta os gráficos.
+    url(r'^graficos$', views.graficos, name='graficos'),
 ]

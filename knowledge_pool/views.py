@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
+import json
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
@@ -149,3 +150,19 @@ def remover_entrada(request, entrada_id):
     entrada.delete()
     return HttpResponseRedirect(
         reverse('knowledge_pool:assunto', args=[entrada.assunto.id]))
+
+
+@login_required
+def graficos(request):
+    """ Apresenta os gráficos """
+    assuntos = Assunto.objects.all().order_by('titulo')
+    entradas = Entrada.objects.all()
+    qtd_entradas = []
+    for assunto in assuntos:
+        qtd_entradas.append(assunto.entrada_set.count())
+
+    titulos = [obj.titulo for obj in assuntos]
+    contexto = {"titulos": json.dumps(titulos),
+                "entradas": json.dumps(qtd_entradas),
+                "assuntos": assuntos}
+    return render(request, 'knowledge_pool/graficos.html', contexto)
