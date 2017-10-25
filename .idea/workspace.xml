@@ -4,7 +4,7 @@
     <list default="true" id="c011bc71-aa55-46a3-aabb-be4e497be3d0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/views.py" afterPath="$PROJECT_DIR$/knowledge_pool/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,26 +44,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graficos.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graficos.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+            <state relative-caret-position="269">
+              <caret line="67" column="44" lean-forward="false" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2862">
-              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="39">
+              <caret line="157" column="36" lean-forward="false" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
               <folding>
                 <element signature="e#59#94#0" expanded="true" />
                 <element signature="e#461#745#0" expanded="false" />
-                <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+                <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knowledge_pool/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/knowledge_pool/models.py" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/editar_entrada.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/confirma_remocao_entrada.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/style.css" />
@@ -93,10 +102,11 @@
         <option value="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assuntos.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/urls.py" />
-        <option value="$PROJECT_DIR$/knowledge_pool/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" />
+        <option value="$PROJECT_DIR$/knowledge_pool/models.py" />
+        <option value="$PROJECT_DIR$/knowledge_pool/views.py" />
       </list>
     </option>
   </component>
@@ -505,7 +515,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -549,7 +559,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -558,6 +568,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +610,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -627,7 +638,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -655,7 +666,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -672,6 +683,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +702,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -707,6 +719,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +738,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -742,6 +755,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +774,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -772,7 +786,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -784,7 +798,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
           </folding>
         </state>
       </provider>
@@ -860,25 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2862">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding>
-            <element signature="e#59#94#0" expanded="true" />
-            <element signature="e#461#745#0" expanded="false" />
-            <marker date="1508894075147" expanded="true" signature="3010:3115" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -896,9 +891,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        <state relative-caret-position="269">
+          <caret line="67" column="44" lean-forward="false" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="157" column="36" lean-forward="false" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
+          <folding>
+            <element signature="e#59#94#0" expanded="true" />
+            <element signature="e#461#745#0" expanded="false" />
+            <marker date="1508949616638" expanded="true" signature="3010:3115" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

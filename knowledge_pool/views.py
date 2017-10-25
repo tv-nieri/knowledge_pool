@@ -155,14 +155,14 @@ def remover_entrada(request, entrada_id):
 @login_required
 def graficos(request):
     """ Apresenta os gráficos """
-    assuntos = Assunto.objects.all().order_by('titulo')
-    entradas = Entrada.objects.all()
+    assuntos = Assunto.objects.all()
     qtd_entradas = []
     for assunto in assuntos:
-        qtd_entradas.append(assunto.entrada_set.count())
+        if assunto.entrada_set.count() != 0:
+            qtd_entradas.append(assunto.entrada_set.count())
 
-    titulos = [obj.titulo for obj in assuntos]
-    contexto = {"titulos": json.dumps(titulos),
-                "entradas": json.dumps(qtd_entradas),
-                "assuntos": assuntos}
+
+    titulos_assuntos = [obj.titulo for obj in assuntos]
+    contexto = {"titulos": json.dumps(titulos_assuntos),
+                "entradas": json.dumps(qtd_entradas)}
     return render(request, 'knowledge_pool/graficos.html', contexto)
