@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c011bc71-aa55-46a3-aabb-be4e497be3d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knowledge_pool/migrations/0007_assunto_qnt_entradas.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knowledge_pool/migrations/0008_auto_20171025_1455.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knowledge_pool/utils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/logo.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" afterPath="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/knowledge_pool.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/models.py" afterPath="$PROJECT_DIR$/knowledge_pool/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js" afterPath="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" afterPath="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/utils.py" afterPath="$PROJECT_DIR$/knowledge_pool/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knowledge_pool/views.py" afterPath="$PROJECT_DIR$/knowledge_pool/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,10 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="-36">
               <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
               <folding />
             </state>
@@ -57,31 +51,21 @@
       <file leaf-file-name="graficos.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
+            <state relative-caret-position="339">
+              <caret line="43" column="123" lean-forward="false" selection-start-line="43" selection-start-column="123" selection-end-line="43" selection-end-column="123" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
               <folding>
-                <element signature="e#857#2891#0#HTML" expanded="false" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_pool/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -89,18 +73,8 @@
       <file leaf-file-name="chart_functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="knowledge_pool.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/knowledge_pool.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="234">
+              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -109,12 +83,12 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1437">
-              <caret line="173" column="46" lean-forward="false" selection-start-line="173" selection-start-column="46" selection-end-line="173" selection-end-column="46" />
+            <state relative-caret-position="411">
+              <caret line="169" column="66" lean-forward="false" selection-start-line="169" selection-start-column="66" selection-end-line="169" selection-end-column="66" />
               <folding>
                 <element signature="e#59#94#0" expanded="true" />
                 <element signature="e#482#766#0" expanded="false" />
-                <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+                <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
               </folding>
             </state>
           </provider>
@@ -123,8 +97,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/knowledge_pool/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="483">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#22#58#0" expanded="true" />
               </folding>
@@ -160,11 +134,12 @@
         <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/assunto.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/models.py" />
         <option value="$PROJECT_DIR$/knowledge_pool/static/css/knowledge_pool.css" />
+        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/utils.py" />
         <option value="$PROJECT_DIR$/knowledge_pool/views.py" />
-        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" />
         <option value="$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js" />
-        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html" />
+        <option value="$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html" />
+        <option value="$PROJECT_DIR$/users/forms.py" />
       </list>
     </option>
   </component>
@@ -217,9 +192,7 @@
             <path>
               <item name="knowledge_pool" type="b2602c69:ProjectViewProjectNode" />
               <item name="knowledge_pool" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_pool" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_pool" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -495,7 +468,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059098" sideWeight="0.49402392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3608087" sideWeight="0.48446214" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3608087" sideWeight="0.48446214" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -507,6 +480,27 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30326593" sideWeight="0.51553786" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059098" sideWeight="0.49402392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3608087" sideWeight="0.48446214" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30358565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -551,16 +545,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#857#2891#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2862">
@@ -568,7 +552,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -593,9 +577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#857#2891#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +596,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -665,7 +647,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -693,7 +675,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -721,7 +703,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -757,7 +739,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -793,7 +775,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -829,7 +811,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -841,7 +823,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -853,7 +835,7 @@
           <folding>
             <element signature="e#59#94#0" expanded="true" />
             <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
           </folding>
         </state>
       </provider>
@@ -945,25 +927,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/utils.py">
+    <entry file="file://$PROJECT_DIR$/core/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#22#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1437">
-          <caret line="173" column="46" lean-forward="false" selection-start-line="173" selection-start-column="46" selection-end-line="173" selection-end-column="46" />
-          <folding>
-            <element signature="e#59#94#0" expanded="true" />
-            <element signature="e#482#766#0" expanded="false" />
-            <marker date="1508963026359" expanded="true" signature="3031:3136" ph="..." />
-          </folding>
+        <state relative-caret-position="-36">
+          <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -975,37 +951,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/settings.py">
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="411">
+          <caret line="169" column="66" lean-forward="false" selection-start-line="169" selection-start-column="66" selection-end-line="169" selection-end-column="66" />
+          <folding>
+            <element signature="e#59#94#0" expanded="true" />
+            <element signature="e#482#766#0" expanded="false" />
+            <marker date="1508972304195" expanded="true" signature="3031:3136" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knowledge_pool/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/static/knowledge_pool/chart_functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="234">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/graficos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
-          <folding>
-            <element signature="e#857#2891#0#HTML" expanded="false" />
-          </folding>
+        <state relative-caret-position="339">
+          <caret line="43" column="123" lean-forward="false" selection-start-line="43" selection-start-column="123" selection-end-line="43" selection-end-column="123" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knowledge_pool/templates/knowledge_pool/base.html">
+    <entry file="file://$PROJECT_DIR$/users/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="65" lean-forward="false" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

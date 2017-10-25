@@ -9,7 +9,7 @@
 {% block content %}
 
 <div class="panel panel-default">
-    <div class="panel-heading"><h4>Quantidade de entradas por assunto (MAX = 10)</h4></div>
+    <div class="panel-heading"><h4>Assuntos com maior número de entradas</h4></div>
     <div class="panel-body" id="chart_canvas">
         <div class="col-md-10">
             <canvas id="assuntosComMaisEntradas"></canvas>
@@ -26,116 +26,27 @@
     </div>
 </div>
 
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Assuntos menos atualizados:</h4></div>
+    <div class="panel-body" id="chart_canvas">
+        <div class="col-md-10">
+            <canvas id="assuntosComMenosEntradas"></canvas>
+        </div>
+    </div>
+</div>
+
 
 {% endblock content %}
 
 {% block scripts %}
     <!-- Gráfico de assuntos com maior número de entradas -->
     <script>
-        var ctx = document.getElementById("assuntosComMaisEntradas").getContext("2d");
-        ctx.canvas.width = 1100;
-        ctx.canvas.height = 300;
-        var titulos = JSON.parse('{{ titulos|safe }}');
-        var entradas = JSON.parse('{{ entradas|safe }}');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: titulos,
-                datasets: [{
-                    label: '#Quantidade de Entradas',
-                    data: entradas,
-                    backgroundColor: [
-                        'rgba(255, 96, 10, 0.5)',
-                        'rgba(255, 251, 10, 0.5)',
-                        'rgba(41, 158, 72, 0.5)',
-                        'rgba(129, 41, 158, 0.5)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 96, 10, 1)',
-                        'rgba(255, 251, 10, 1)',
-                        'rgba(41, 158, 72, 1)',
-                        'rgba(129, 41, 158, 1)',
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
+        getVerticalBarChart("assuntosComMaisEntradas", '{{ titulos|safe }}', '{{ entradas|safe }}', "# Entradas por Assunto");
     </script>
     <!-- Gráfico de maiores contribuidores -->
     <script>
-        var ctx = document.getElementById("usersComMaisEntradas").getContext("2d");
-        ctx.canvas.width = 1100;
-        ctx.canvas.height = 300;
-        var users = JSON.parse('{{ users|safe }}');
-        var entradaPorUser = JSON.parse('{{ entradas_por_user|safe }}');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: users,
-                datasets: [{
-                    label: '# Usuários',
-                    data: entradaPorUser,
-                    backgroundColor: [
-                        'rgba(255, 96, 10, 0.5)',
-                        'rgba(255, 251, 10, 0.5)',
-                        'rgba(41, 158, 72, 0.5)',
-                        'rgba(129, 41, 158, 0.5)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 96, 10, 1)',
-                        'rgba(255, 251, 10, 1)',
-                        'rgba(41, 158, 72, 1)',
-                        'rgba(129, 41, 158, 1)',
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
+         getVerticalBarChart("usersComMaisEntradas", '{{ users|safe }}', '{{ entradas_por_user|safe }}', "# Usuários");
     </script>
+    <!-- Gráfico com assuntos com menos entradas -->
+
 {% endblock scripts %}

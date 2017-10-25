@@ -161,13 +161,8 @@ def graficos(request):
     """ Apresenta os gráficos """
     qtd_entradas = get_qnt_entrada()
     titulos_assuntos = get_titulos_assuntos()
-    users = User.objects.all()
-    user_names = []
-    for user in users:
-        user_names.append(user.username)
-    entradas_por_user = []
-    for user in users:
-        entradas_por_user.append(user.entrada_set.count())
+    user_names = get_user_names()
+    entradas_por_user = get_entradas_por_user()
 
     contexto = {"titulos": json.dumps(titulos_assuntos),
                 "entradas": json.dumps(qtd_entradas),
