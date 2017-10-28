@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import json
+from django.core import serializers
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
@@ -168,6 +169,7 @@ def graficos(request):
                 "entradas": json.dumps(qtd_entradas),
                 "users": json.dumps(user_names),
                 "entradas_por_user": json.dumps(entradas_por_user)}
+
     return render(request, 'knowledge_pool/graficos.html', contexto)
 
 

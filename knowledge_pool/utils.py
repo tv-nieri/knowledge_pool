@@ -30,6 +30,8 @@ def get_user_names():
     users = User.objects.all()
     user_names = []
     for user in users:
+        if user.username == "admin":
+            continue
         user_names.append(user.username)
     return user_names
 
@@ -39,5 +41,7 @@ def get_entradas_por_user():
     users = User.objects.all()
     entradas_por_user = []
     for user in users:
+        if user.username == "admin":
+            continue
         entradas_por_user.append(user.entrada_set.count())
     return entradas_por_user

@@ -18,7 +18,7 @@
 </div>
 
 <div class="panel panel-default">
-    <div class="panel-heading"><h4>Contribuidores</h4></div>
+    <div class="panel-heading"><h4>Maiores Contribuidores</h4></div>
     <div class="panel-body" id="chart_canvas">
         <div class="col-md-10">
             <canvas id="usersComMaisEntradas"></canvas>
@@ -26,27 +26,13 @@
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading"><h4>Assuntos menos atualizados:</h4></div>
-    <div class="panel-body" id="chart_canvas">
-        <div class="col-md-10">
-            <canvas id="assuntosComMenosEntradas"></canvas>
-        </div>
-    </div>
-</div>
-
-
 {% endblock content %}
 
 {% block scripts %}
     <!-- Gráfico de assuntos com maior número de entradas -->
     <script>
         getVerticalBarChart("assuntosComMaisEntradas", '{{ titulos|safe }}', '{{ entradas|safe }}', "# Entradas por Assunto");
+        getVerticalBarChart("usersComMaisEntradas", '{{ users|safe }}', '{{ entradas_por_user|safe }}', "# Qtd de entradas");
     </script>
-    <!-- Gráfico de maiores contribuidores -->
-    <script>
-         getVerticalBarChart("usersComMaisEntradas", '{{ users|safe }}', '{{ entradas_por_user|safe }}', "# Usuários");
-    </script>
-    <!-- Gráfico com assuntos com menos entradas -->
 
 {% endblock scripts %}
