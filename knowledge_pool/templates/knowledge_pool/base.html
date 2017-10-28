@@ -44,9 +44,12 @@
                             <a href="{% url 'knowledge_pool:assuntos' %}">Assuntos</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'knowledge_pool:graficos' %}">Métricas</a>
-                        </li>
+                            <li>
+                                <a href="{% url 'knowledge_pool:graficos' %}">Métricas</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'knowledge_pool:minhas_entradas' user.id %}">Minhas Entradas</a>
+                            </li>
                         {% endif %}
                     </ul>
 

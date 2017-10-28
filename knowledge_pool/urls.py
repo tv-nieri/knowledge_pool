@@ -47,4 +47,8 @@ urlpatterns = [
 
     # Apresenta os gráficos.
     url(r'^graficos$', views.graficos, name='graficos'),
+
+    # Entradas do user
+    url(r'^minhas_entradas/(?P<user_id>\d+)/$',
+        views.minhas_entradas, name='minhas_entradas'),
 ]

@@ -173,3 +173,18 @@ def graficos(request):
     return render(request, 'knowledge_pool/graficos.html', contexto)
 
 
+@login_required
+def minhas_entradas(request, user_id):
+    user = User.objects.get(id=user_id)
+    entradas = user.entrada_set.all()
+    assuntos_all = [obj.assunto for obj in entradas]
+    assuntos = []
+    for assunto in assuntos_all:
+        if assunto not in assuntos:
+            assuntos.append(assunto)
+    contexto = {"user": user,
+                "entradas": entradas,
+                "assuntos": assuntos}
+    return render(request, 'knowledge_pool/minhas_entradas.html', contexto)
+
+

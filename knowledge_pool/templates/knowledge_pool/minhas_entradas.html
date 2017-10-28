@@ -1,0 +1,35 @@
+{% extends 'knowledge_pool/base.html' %}
+
+{% block header %}
+    <h1>Minhas entradas:</h1>
+    <h6>
+        Clique sobre a entrada para editá-la,
+        ou clique sobre o assunto para ir até sua página.
+    </h6>
+{% endblock header %}
+
+{% block content %}
+    {% for assunto in assuntos %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Em: <a href="{% url "knowledge_pool:assunto" assunto.id %}">{{ assunto.titulo }}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                {% for entrada in entradas %}
+                    {% if entrada.assunto == assunto %}
+                        Criada em: {{ entrada.data_criacao }}
+                        <a href="{% url "knowledge_pool:editar_entrada" entrada.id %}" class="list-group-item">
+                            {{ entrada.texto }}
+                        </a>
+                        <br/>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
