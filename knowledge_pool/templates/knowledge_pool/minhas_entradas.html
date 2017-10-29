@@ -10,7 +10,7 @@
 
 {% block content %}
     {% for assunto in assuntos %}
-        <div class="panel panel-default">
+        <div class="panel panel-default, panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     Em: <a href="{% url "knowledge_pool:assunto" assunto.id %}">{{ assunto.titulo }}</a>

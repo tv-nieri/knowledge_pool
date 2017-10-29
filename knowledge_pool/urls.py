@@ -8,6 +8,9 @@ urlpatterns = [
     # Página inicial
     url(r'^$', views.index, name='index'),
 
+    # Página inicial
+    url(r'^about$', views.about, name='about'),
+
     # Página com todos os assuntos
     url(r'^assuntos$', views.assuntos, name='assuntos'),
 

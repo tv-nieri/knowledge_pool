@@ -1,0 +1,124 @@
+{% extends 'knowledge_pool/base.html' %}
+{% load static %}
+
+{% block header-links %}
+    <link href="{% static 'knowledge_pool/css/round-about.css' %}" rel="stylesheet">
+{% endblock header-links %}
+
+{% block content %}
+    <!-- Page Content -->
+    <!-- Introduction Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Sobre esta app
+            </h1>
+            <p>
+                O intuíto desta aplicação, é fornecer um lugar centralizado para compartilhamento de conhecimento de times de Ti.
+                O objetivo principal, é o de mapear onde o time tem mais dificuldades para que uma ação mais precisa seja tomada.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Team Members Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Tecnologias utilizadas:</h2>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/python.png' %}" alt="Python">
+            <h3>Python
+                <small>Linguagem de programação</small>
+            </h3>
+            <p>
+                Utilizada por sua boa performance e facilidade de codificação.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/django.png' %}" alt="Django">
+            <h3>
+                Django
+                <small>Web Framework</small>
+            </h3>
+            <p>Utilizado no backend da aplicação por sua simplicidade.</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/ubuntu.png' %}" alt="Linux Ubuntu">
+            <h3>
+                Linux Ubuntu 16.04
+                <small>Sistema Operacional</small>
+            </h3>
+            <p>
+                Utilizado no deploy por ter python nativo. Também por sua robustez, alta disponibilidade,
+                segurança e confiabilidade.
+
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/gunicorn.png' %}" alt="Gunicorn">
+            <h3>
+                Gunicorn
+                <small>Middleware (Servidor de aplicação)</small>
+            </h3>
+            <p>
+                Servidor de aplicação do Django. Utilizado por sua boa disponibilidade e integração com Heroku.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/bs.png' %}" alt="Bootstrap">
+            <h3>
+                Bootstrap
+                <small>Frontend framework</small>
+            </h3>
+            <p>
+                Utilizado por seus estilos serem muito bons, e sua integração com o Django.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/heroku.png' %}" alt="Heroku">
+            <h3>
+                Heroku
+                <small>Paas - Platform As A Service</small>
+            </h3>
+            <p>
+                Plataforma de aplicação em nuvem. Utilizado por seu suporte a aplicações Djnago, integração com Git e facilidade de uso.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/postgresql.png' %}" alt="PostgreSQL">
+            <h3>
+                PostgreSQL
+                <small>Banco de Dados</small>
+            </h3>
+            <p>
+                Utilizado por sua escalabilidade, e ser um dos bancos de dados mais utilizados do momento.
+                Sua licença é gratuíta, o que influencia muito em sua empregabilidade neste projeto.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/pycharm.png' %}" alt="Pycharm">
+            <h3>
+                Pycharm
+                <small>IDE - Integrated Development Environment</small>
+            </h3>
+            <p>
+                Utilizada por ser a melhor IDE do mercado em relação a Python. A ferramenta ainda é integrada
+                com o framework Django (utilizado neste projeto), com o sistema de versionamento Git, e também com o
+                sistema de ambiente virtual Virtualenv.
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center">
+            <img class="img-circle img-responsive img-center" src="{% static 'knowledge_pool/images/git.png' %}" alt="Git">
+            <h3>
+                Git
+                <small>Sistema de versionamento</small>
+            </h3>
+            <p>
+                Utilizado para versional o aplicativo e controlar estas versões. Git é hoje o mais utilizado
+                sistema de versionamento, sendo assim há muito material para consulta na internet, grande motivo
+                de sua adoção neste projeto.
+            </p>
+        </div>
+    </div>
+    <hr>
+{% endblock content %}

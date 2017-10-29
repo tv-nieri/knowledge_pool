@@ -23,6 +23,16 @@ def index(request):
         return render(request, 'knowledge_pool/index.html')
 
 
+def about(request):
+    """ About page """
+    try:
+        user = User.objects.get(id=request.user.id)
+        contexto = {'user': user}
+        return render(request, 'knowledge_pool/about.html', contexto)
+    except ObjectDoesNotExist:
+        return render(request, 'knowledge_pool/about.html')
+
+
 @login_required
 def assuntos(request):
     """ Retorna uma página com todos os assuntos """

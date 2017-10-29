@@ -11,10 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'knowledge_pool/css/bootstrap.min.css' %}">
+
         <link rel="stylesheet" href="{% static 'knowledge_pool/css/knowledge_pool.css' %}">
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>-->
         <script src="{% static "knowledge_pool/js/chart_functions.js" %}"></script>
         <script src="{% static "knowledge_pool/js/Chart.min.js" %}"></script>
+        <script src="{% static 'knowledge_pool/js/jquery.js' %}"></script>
 
         {% if user.is_authenticated %}
             <title>Knowledge Pool | {{ user.username }}</title>
@@ -24,6 +26,8 @@
 
         {% bootstrap_css %}
         {% bootstrap_javascript %}
+        {% block header-links %}
+        {% endblock header-links %}
     </head>
     <body>
         <!-- Static Navbar -->
@@ -34,8 +38,7 @@
                         data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                     </button>
-                    <!--navbar-brand removido da classe do link-->
-                    <a class="navbar-brand, main-title" href="{% url 'knowledge_pool:index' %}">
+                    <a class="main-title" href="{% url 'knowledge_pool:index' %}">
                         KnowledgePool
                     </a>
                 </div>
@@ -51,6 +54,9 @@
                             </li>
                             <li>
                                 <a href="{% url 'knowledge_pool:minhas_entradas' user.id %}">Minhas Entradas</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'knowledge_pool:about' %}">About</a>
                             </li>
                         {% endif %}
                     </ul>
@@ -87,13 +93,10 @@
         </div> <!-- /container -->
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">
-            Trabalho desenvolvido por
-            <a href="https://pt-br.facebook.com/tarciovinicius.nieri">Tarcio Nieri</a>
-            e o progresso pode ser acompanhado pelo
-            <a href="https://github.com/tv-nieri/knowledge_pool">Github</a>
-        </p>
-
+          <p class="text-muted">
+              Copyright &copy; Knowledge Pool 2017 -
+              <a href="https://github.com/tv-nieri/knowledge_pool">Github</a>
+          </p>
       </div>
     </footer>
     </body>
