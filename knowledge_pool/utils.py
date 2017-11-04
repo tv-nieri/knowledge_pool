@@ -45,3 +45,19 @@ def get_entradas_por_user():
             continue
         entradas_por_user.append(user.entrada_set.count())
     return entradas_por_user
+
+
+def get_entradas_utilizadas():
+    return Entrada.objects.filter(qtd_utilizacoes__gt=0).order_by('-qtd_utilizacoes')[:10]
+
+
+def get_entradas_utilizadas_chart():
+    entradas_set = get_entradas_utilizadas()
+    assuntos = [obj.assunto.titulo for obj in entradas_set]
+    qnt = [obj.qtd_utilizacoes for obj in entradas_set]
+    entradas = {"assuntos": assuntos, "qnt": qnt}
+    return entradas
+
+
+
+

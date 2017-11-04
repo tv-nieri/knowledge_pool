@@ -2,6 +2,10 @@
     font-family: 'Lobster', cursive;
     text-align: center;
     color: #447e9b;
+    font-size: 100%;
+}
+
+.nav-font {
     font-size: 200%;
 }
 
@@ -12,11 +16,6 @@
 
 .navbar-brand {
     float:none;
-    font-size: 40px;
-    margin: 8px 0;
-}
-
-.navbar-brand a{
     font-size: 40px;
     margin: 8px 0;
 }

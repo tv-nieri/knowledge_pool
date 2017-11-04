@@ -50,10 +50,13 @@
                         </li>
                         {% if user.is_authenticated %}
                             <li>
-                                <a href="{% url 'knowledge_pool:graficos' %}">Métricas</a>
+                                <a href="{% url 'knowledge_pool:graficos' %}">Gráficos Informativos</a>
                             </li>
                             <li>
                                 <a href="{% url 'knowledge_pool:minhas_entradas' user.id %}">Minhas Entradas</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'knowledge_pool:entradas_utilizadas' %}">Entradas mais utilizadas</a>
                             </li>
                             <li>
                                 <a href="{% url 'knowledge_pool:about' %}">About</a>

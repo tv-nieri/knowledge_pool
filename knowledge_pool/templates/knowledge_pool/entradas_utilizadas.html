@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'knowledge_pool/base.html' %}
+
+{% block header %}
+    <h1>Entradas mais utilizadas</h1>
+    <h6>
+        Clique sobre o assunto para ir até sua página.
+    </h6>
+{% endblock header %}
+
+{% block content %}
+    <div class="panel panel-default, panel panel-primary">
+
+    {% for entrada in entradas %}
+
+
+            <div class="panel-body">
+                <div class="list-group">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-right">
+                                <a href="{% url 'knowledge_pool:assunto' entrada.assunto.id %}">
+                                    Em: {{ entrada.assunto.titulo }}
+                                </a>
+                            </div>
+                            Criada em: {{ entrada.data_criacao }}, por {{ entrada.dono }}
+                        </div>
+                        <div class="panel-body">
+                            {{ entrada.texto }}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock content %}

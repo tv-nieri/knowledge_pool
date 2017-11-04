@@ -23,6 +23,7 @@ class Entrada(models.Model):
     texto = models.TextField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     dono = models.ForeignKey(User)
+    qtd_utilizacoes = models.IntegerField(default=0)
 
     def __str__(self):
         """ Retorna uma representação do assunto. """

@@ -3,10 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 import json
-from django.core import serializers
 
 from .models import Assunto, Entrada
 from .forms import AssuntoForm, EntradaForm
@@ -174,11 +172,15 @@ def graficos(request):
     titulos_assuntos = get_titulos_assuntos()
     user_names = get_user_names()
     entradas_por_user = get_entradas_por_user()
+    entradas_utilizadas = get_entradas_utilizadas_chart()
 
     contexto = {"titulos": json.dumps(titulos_assuntos),
                 "entradas": json.dumps(qtd_entradas),
                 "users": json.dumps(user_names),
-                "entradas_por_user": json.dumps(entradas_por_user)}
+                "entradas_por_user": json.dumps(entradas_por_user),
+                "assuntos_entradas": json.dumps(entradas_utilizadas['assuntos']),
+                "qnt_entradas_utilizadas": json.dumps(entradas_utilizadas['qnt']),
+                "entradas_utilizadas": get_entradas_utilizadas()}
 
     return render(request, 'knowledge_pool/graficos.html', contexto)
 
@@ -196,5 +198,23 @@ def minhas_entradas(request, user_id):
                 "entradas": entradas,
                 "assuntos": assuntos}
     return render(request, 'knowledge_pool/minhas_entradas.html', contexto)
+
+
+@login_required
+def soma_utilizacao(request, entrada_id):
+    entrada = Entrada.objects.get(id=entrada_id)
+    assunto = entrada.assunto
+    entrada.qtd_utilizacoes += 1
+    entrada.save()
+    return HttpResponseRedirect(
+        reverse('knowledge_pool:assunto', args=[assunto.id]))
+
+
+@login_required
+def entradas_utilizadas(request):
+    entradas = get_entradas_utilizadas()
+    contexto = {"entradas": entradas}
+    return render(request, 'knowledge_pool/entradas_utilizadas.html', contexto)
+
 
 

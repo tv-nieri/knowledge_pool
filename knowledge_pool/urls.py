@@ -8,7 +8,7 @@ urlpatterns = [
     # Página inicial
     url(r'^$', views.index, name='index'),
 
-    # Página inicial
+    # Página sobre
     url(r'^about$', views.about, name='about'),
 
     # Página com todos os assuntos
@@ -54,4 +54,10 @@ urlpatterns = [
     # Entradas do user
     url(r'^minhas_entradas/(?P<user_id>\d+)/$',
         views.minhas_entradas, name='minhas_entradas'),
+
+    # Soma utilização
+    url(r'^soma_utilizacao/(?P<entrada_id>\d+)/$', views.soma_utilizacao, name='soma_utilizacao'),
+
+    # Mostra Entradas mais utilizadas
+    url(r'^entradas_utilizadas$', views.entradas_utilizadas, name='entradas_utilizadas'),
 ]
