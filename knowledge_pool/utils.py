@@ -1,7 +1,8 @@
 """ Utils methods """
-from .models import Assunto, Entrada
 from django.contrib.auth.models import User
-from datetime import datetime
+
+from .models import Assunto, Entrada
+
 
 def get_assuntos_qnt_entrada():
     """ Retorna os assuntos com pelo menos 1 entrada """
@@ -48,16 +49,14 @@ def get_entradas_por_user():
 
 
 def get_entradas_utilizadas():
+    """ Retorna as 10 primeiras entradas mais utilizadas """
     return Entrada.objects.filter(qtd_utilizacoes__gt=0).order_by('-qtd_utilizacoes')[:10]
 
 
 def get_entradas_utilizadas_chart():
+    """ Retorna um dic para chamar o gráfico de dentradas mais utilizadas """
     entradas_set = get_entradas_utilizadas()
     assuntos = [obj.assunto.titulo for obj in entradas_set]
     qnt = [obj.qtd_utilizacoes for obj in entradas_set]
     entradas = {"assuntos": assuntos, "qnt": qnt}
     return entradas
-
-
-
-

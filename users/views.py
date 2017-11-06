@@ -1,9 +1,9 @@
 """ Views para o add users """
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 
 def logout_view(request):
@@ -30,4 +30,3 @@ def register(request):
             return HttpResponseRedirect(reverse('knowledge_pool:index'))
     context = {'form': form}
     return render(request, 'users/register.html', context)
-

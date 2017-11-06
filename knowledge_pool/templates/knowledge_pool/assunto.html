@@ -1,53 +1,44 @@
-{% extends "knowledge_pool/base.html" %}
+{% extends "knowledge_pool/base.html" %} {% block header %}
+<h2>{{ assunto }}</h2>
+<p>{{ assunto.descricao }}</p>
+<p>Quantidade de entradas: {{ assunto.qnt_entradas }}</p>
+{% if user_logado == assunto.dono %}
+<a href="{% url 'knowledge_pool:editar_assunto' assunto.id %}">Editar/Remover</a>
+{% endif %} {% endblock header %} {% block content %}
+<p>
+    <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
+</p>
 
-{% block header %}
-    <h2>{{ assunto }}</h2>
-    <p>{{ assunto.descricao }}</p>
-    <p>Quantidade de entradas: {{ assunto.qnt_entradas }}</p>
-    {% if user_logado == assunto.dono %}
-        <a href="{% url 'knowledge_pool:editar_assunto' assunto.id %}">Editar/Remover</a>
-    {% endif %}
-{% endblock header %}
-
-{% block content %}
-    <p>
-        <a href="{% url 'knowledge_pool:nova_entrada' assunto.id %}">Nova entrada</a>
-    </p>
-
-    {% for entrada in entradas  %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>
-                    Criada em: {{ entrada.data_criacao|date:'d/M/Y, H:i' }} por {{ entrada.dono.username }}
-
-                    {% if user_logado == entrada.dono %}
-                        <small>
-                            <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar/Remover</a>
-                        </small>
-                    {% endif %}
-                    <div class="pull-right">
-                        <h6>
-                            <form>
-                            Utilizada {{ entrada.qtd_utilizacoes }} vezes
-                            <button type="submit" class="btn btn-info btn-xs"
-                                            formaction="{% url 'knowledge_pool:soma_utilizacao' entrada.id %}">
-                                +
-                            </button>
-                            </form>
-                        </h6>
-                    </div>
-                </h4>
+{% for entrada in entradas %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>
+            Criada em: {{ entrada.data_criacao|date:'d/M/Y, H:i' }} por {{ entrada.dono.username }} {% if user_logado == entrada.dono
+            %}
+            <small>
+                <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar/Remover</a>
+            </small>
+            {% endif %}
+            <div class="pull-right">
+                <h6>
+                    <form>
+                        Utilizada {{ entrada.qtd_utilizacoes }} vezes
+                        <button type="submit" class="btn btn-info btn-xs" formaction="{% url 'knowledge_pool:soma_utilizacao' entrada.id %}">
+                            +
+                        </button>
+                    </form>
+                </h6>
             </div>
-            <div class="panel-body">
-                {% if entrada.ticket_associado != '' %}
-                    <h4>Ticket/Erro associado: {{ entrada.ticket_associado }}</h4><br/>
-                {% endif %}
-                {{ entrada.texto|linebreaks }}
-            </div>
-        </div><!-- panel -->
-    {% empty %}
-        Não há entradas para este tópico ainda.
-    {% endfor %}
-    <!-- Modal -->
+        </h4>
+    </div>
+    <div class="panel-body">
+        {% if entrada.ticket_associado != '' %}
+        <h4>Ticket/Erro associado: {{ entrada.ticket_associado }}</h4>
+        <br/> {% endif %} {{ entrada.texto|linebreaks }}
+    </div>
+</div>
+<!-- panel -->
+{% empty %} Não há entradas para este tópico ainda. {% endfor %}
+<!-- Modal -->
 
 {% endblock content %}

@@ -1,24 +1,22 @@
-{% extends "knowledge_pool/base.html" %}
-
-{% block header %}
-    <h1>Assuntos</h1>
-{% endblock header %}
-
-{% block content %}
-  <ul>
-    {% for assunto in lista_assuntos  %}
-      <li>
-          <h3>
-              <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
-                  {{ assunto }}
-              </a>
-          </h3>
-      </li>
-    {% empty %}
-      <li>Nenhum assunto cadastrado até o momento.</li>
-    {% endfor %}
-  </ul>
-  <br />
-  <h4><a href="{% url 'knowledge_pool:novo_assunto' %}">Novo assunto</a></h4>
+{% extends "knowledge_pool/base.html" %} {% block header %}
+<h1>Assuntos</h1>
+{% endblock header %} {% block content %}
+<ul>
+  {% for assunto in lista_assuntos %}
+  <li>
+    <h3>
+      <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
+        {{ assunto }}
+      </a>
+    </h3>
+  </li>
+  {% empty %}
+  <li>Nenhum assunto cadastrado até o momento.</li>
+  {% endfor %}
+</ul>
+<br />
+<h4>
+  <a href="{% url 'knowledge_pool:novo_assunto' %}">Novo assunto</a>
+</h4>
 
 {% endblock content %}

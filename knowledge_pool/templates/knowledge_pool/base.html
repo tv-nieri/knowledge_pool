@@ -1,106 +1,103 @@
-{% load bootstrap3 %}
-{% load static %}
-{% load staticfiles %}
+{% load bootstrap3 %} {% load static %} {% load staticfiles %}
 
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'knowledge_pool/css/bootstrap.min.css' %}">
 
-        <link rel="stylesheet" href="{% static 'knowledge_pool/css/knowledge_pool.css' %}">
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>-->
-        <script src="{% static "knowledge_pool/js/chart_functions.js" %}"></script>
-        <script src="{% static "knowledge_pool/js/Chart.min.js" %}"></script>
-        <script src="{% static 'knowledge_pool/js/jquery.js' %}"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'knowledge_pool/css/bootstrap.min.css' %}">
 
-        {% if user.is_authenticated %}
-            <title>Knowledge Pool | {{ user.username }}</title>
-        {% else %}
-            <title>Knowledge Pool</title>
-        {% endif %}
+    <link rel="stylesheet" href="{% static 'knowledge_pool/css/knowledge_pool.css' %}">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>-->
+    <script src="{% static " knowledge_pool/js/chart_functions.js " %}"></script>
+    <script src="{% static " knowledge_pool/js/Chart.min.js " %}"></script>
+    <script src="{% static 'knowledge_pool/js/jquery.js' %}"></script> {% if user.is_authenticated %}
+    <title>Knowledge Pool | {{ user.username }}</title>
+    {% else %}
+    <title>Knowledge Pool</title>
+    {% endif %} {% bootstrap_css %} {% bootstrap_javascript %} {% block header-links %} {% endblock header-links %}
+</head>
 
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-        {% block header-links %}
-        {% endblock header-links %}
-    </head>
-    <body>
-        <!-- Static Navbar -->
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    </button>
-                    <a class="main-title" href="{% url 'knowledge_pool:index' %}">
-                        KnowledgePool
-                    </a>
-                </div>
-
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="{% url 'knowledge_pool:assuntos' %}">Assuntos</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                            <li>
-                                <a href="{% url 'knowledge_pool:graficos' %}">Gráficos Informativos</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'knowledge_pool:minhas_entradas' user.id %}">Minhas Entradas</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'knowledge_pool:entradas_utilizadas' %}">Entradas mais utilizadas</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'knowledge_pool:about' %}">About</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        {% if user.is_authenticated %}
-                            <li><a>Olá, {{ user.username }}.</a></li>
-                            <li><a href="{% url 'users:logout' %}">Log out</a></li>
-                        {% else %}
-                            <li><a href="{% url 'users:register' %}">Cadastro</a></li>
-                            <li><a href="{% url 'users:login' %}">Log in</a></li>
-                        {% endif %}
-                    </ul>
-                </div><!-- /.nav collapse -->
-            </div>
-        </nav>
-
+<body>
+    <!-- Static Navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="page-header">
-                {% block header %}
-
-                {% endblock header %}
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                </button>
+                <a class="main-title" href="{% url 'knowledge_pool:index' %}">
+                    KnowledgePool
+                </a>
             </div>
-            <div>
-                {% block content %}
 
-                {% endblock content %}
-            </div>
-            <div>
-                {% block scripts %}
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'knowledge_pool:assuntos' %}">Assuntos</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'knowledge_pool:graficos' %}">Gráficos Informativos</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'knowledge_pool:minhas_entradas' user.id %}">Minhas Entradas</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'knowledge_pool:entradas_utilizadas' %}">Entradas mais utilizadas</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'knowledge_pool:about' %}">About</a>
+                    </li>
+                    {% endif %}
+                </ul>
 
-                {% endblock scripts %}
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a>Olá, {{ user.username }}.</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'users:logout' %}">Log out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'users:register' %}">Cadastro</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'users:login' %}">Log in</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
-        </div> <!-- /container -->
+            <!-- /.nav collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            {% block header %} {% endblock header %}
+        </div>
+        <div>
+            {% block content %} {% endblock content %}
+        </div>
+        <div>
+            {% block scripts %} {% endblock scripts %}
+        </div>
+    </div>
+    <!-- /container -->
     <footer class="footer">
-      <div class="container">
-          <p class="text-muted">
-              Copyright &copy; Knowledge Pool 2017 -
-              <a href="https://github.com/tv-nieri/knowledge_pool">Github</a>
-          </p>
-      </div>
+        <div class="container">
+            <p class="text-muted">
+                Copyright &copy; Knowledge Pool 2017 -
+                <a href="https://github.com/tv-nieri/knowledge_pool">Github</a>
+            </p>
+        </div>
     </footer>
-    </body>
+</body>
+
 </html>

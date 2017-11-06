@@ -1,31 +1,24 @@
-{% extends "knowledge_pool/base.html" %}
+{% extends "knowledge_pool/base.html" %} {% block header %}
+<div class="jumbotron">
+    <h1 class="main-title">
+        <center> Knowledge Pool</center>
+    </h1>
+</div>
+{% endblock header %} {% block content %} {% if user.is_authenticated %}
+<h2>Bem vindo {{ user }}!!!</h2>
+{% else %}
+<h2>
+    <a href="{% url 'users:register' %}">Crie uma conta</a> para consultar assuntos e criar sua próprias anotações.
+</h2>
+{% endif %}
 
-{% block header %}
-    <div class="jumbotron">
-        <h1 class="main-title">
-            <center> Knowledge Pool</center>
-        </h1>
-    </div>
-{% endblock header %}
-
-{% block content %}
-  
-    {% if  user.is_authenticated %}
-        <h2>Bem vindo {{ user }}!!!</h2>
-    {% else %}
-        <h2>
-            <a href="{% url 'users:register' %}">Crie uma conta</a> para consultar
-                assuntos e criar sua próprias anotações.
-        </h2>
-    {% endif %}
-    
-  <h2>
-      Aqui você pode pesquisar sobre um assunto específico sobre o qual está
-      aprendendo ou encontrar uma solução para um problema que encontrou. Mas é
-      claro, é importante compartilhar o que você sabe também, então não deixe
-      de criar suas próprias anotações! <a href="{% url 'knowledge_pool:assuntos' %}">Começar!</a>
-      <br/>
-      <br/>
-      <i>"Se quer ir rápido vá sozinho. Se quer ir longe, vamos juntos..."</i>
-  </h2>
+<h2>
+    Aqui você pode pesquisar sobre um assunto específico sobre o qual está aprendendo ou encontrar uma solução para um problema
+    que encontrou. Mas é claro, é importante compartilhar o que você sabe também, então não deixe de criar suas próprias
+    anotações!
+    <a href="{% url 'knowledge_pool:assuntos' %}">Começar!</a>
+    <br/>
+    <br/>
+    <i>"Se quer ir rápido vá sozinho. Se quer ir longe, vamos juntos..."</i>
+</h2>
 {% endblock content %}

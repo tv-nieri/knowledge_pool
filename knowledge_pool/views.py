@@ -1,13 +1,14 @@
 """ Arquivo de views(controller) do app knowledge_pool """
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.contrib.auth.decorators import login_required
-from django.core.exceptions import ObjectDoesNotExist
 import json
 
-from .models import Assunto, Entrada
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
 from .forms import AssuntoForm, EntradaForm
+from .models import Assunto, Entrada
 from .utils import *
 
 
@@ -160,10 +161,14 @@ def confirma_remocao_entrada(request, entrada_id):
 def remover_entrada(request, entrada_id):
     """ Remove uma entrada """
     entrada = Entrada.objects.get(id=entrada_id)
+    assunto = Assunto.objects.get(id=entrada.assunto_id)
     entrada.delete()
-    return HttpResponseRedirect(
-        reverse('knowledge_pool:assunto', args=[entrada.assunto.id]))
-
+    if entrada is not None:
+        return HttpResponseRedirect(
+            reverse('knowledge_pool:assunto', args=[entrada.assunto.id]))
+    else:
+        contexto = {"assunto": assunto.id}
+        return render(request, 'knoledge_pool/assunto.html', contexto)
 
 @login_required
 def graficos(request):
@@ -187,6 +192,7 @@ def graficos(request):
 
 @login_required
 def minhas_entradas(request, user_id):
+    """ Mostra as entradas do user logado """
     user = User.objects.get(id=user_id)
     entradas = user.entrada_set.all()
     assuntos_all = [obj.assunto for obj in entradas]
@@ -202,6 +208,7 @@ def minhas_entradas(request, user_id):
 
 @login_required
 def soma_utilizacao(request, entrada_id):
+    """ Soma 1 na utilização de uma entrada """
     entrada = Entrada.objects.get(id=entrada_id)
     assunto = entrada.assunto
     entrada.qtd_utilizacoes += 1
@@ -212,9 +219,7 @@ def soma_utilizacao(request, entrada_id):
 
 @login_required
 def entradas_utilizadas(request):
+    """ Mostra as entradas mais utilizadas """
     entradas = get_entradas_utilizadas()
     contexto = {"entradas": entradas}
     return render(request, 'knowledge_pool/entradas_utilizadas.html', contexto)
-
-
-

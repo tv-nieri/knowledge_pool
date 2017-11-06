@@ -1,31 +1,21 @@
-{% extends "knowledge_pool/base.html" %}
-{% load bootstrap3 %}
+{% extends "knowledge_pool/base.html" %} {% load bootstrap3 %} {% block header %}
+<h2>
+    Editar entrada para
+    <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
+        {{ assunto }}
+    </a>:
+</h2>
+{% endblock header %} {% block content %}
 
-{% block header %}
-    <h2>
-        Editar entrada para 
-        <a href="{% url 'knowledge_pool:assunto' assunto.id %}">
-            {{ assunto }}
-        </a>:
-    </h2>
-{% endblock header %}
-
-{% block content %}
-
-    <form action="{% url 'knowledge_pool:editar_entrada' entrada.id %}" 
-        method="POST" class="form">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-
-        {% buttons %}
-            <button type="submit" name="submit" class="btn btn-primary">
-                Salvar alterações
-            </button>
-            <button type="submit" name="remove" class="btn btn-danger"
-                formaction="{% url 'knowledge_pool:confirma_remocao_entrada' entrada.id %}">
-                Remover
-            </button>
-        {% endbuttons %}
-    </form>
+<form action="{% url 'knowledge_pool:editar_entrada' entrada.id %}" method="POST" class="form">
+    {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+    <button type="submit" name="submit" class="btn btn-primary">
+        Salvar alterações
+    </button>
+    <button type="submit" name="remove" class="btn btn-danger" formaction="{% url 'knowledge_pool:confirma_remocao_entrada' entrada.id %}">
+        Remover
+    </button>
+    {% endbuttons %}
+</form>
 
 {% endblock content %}
