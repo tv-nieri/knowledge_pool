@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="{% static 'knowledge_pool/css/bootstrap.min.css' %}">
 
     <link rel="stylesheet" href="{% static 'knowledge_pool/css/knowledge_pool.css' %}">
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>-->
-    <script src="{% static " knowledge_pool/js/chart_functions.js " %}"></script>
-    <script src="{% static " knowledge_pool/js/Chart.min.js " %}"></script>
-    <script src="{% static 'knowledge_pool/js/jquery.js' %}"></script> {% if user.is_authenticated %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+    <script src="{% static 'knowledge_pool/js/chart_functions.js' %}"></script>
+    <!--<script src="{% static " knowledge_pool/js/Chart.min.js " %}"></script>-->
+    <!--<script src="{% static 'knowledge_pool/js/jquery.js' %}"></script>-->
+    {% if user.is_authenticated %}
     <title>Knowledge Pool | {{ user.username }}</title>
     {% else %}
     <title>Knowledge Pool</title>

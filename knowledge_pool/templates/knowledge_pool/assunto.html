@@ -13,8 +13,8 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4>
-            Criada em: {{ entrada.data_criacao|date:'d/M/Y, H:i' }} por {{ entrada.dono.username }} {% if user_logado == entrada.dono
-            %}
+            Criada em: {{ entrada.data_criacao|date:'d/M/Y, H:i' }} por {{ entrada.dono.username }} 
+            {% if user_logado == entrada.dono %}
             <small>
                 <a href="{% url 'knowledge_pool:editar_entrada' entrada.id %}">Editar/Remover</a>
             </small>
